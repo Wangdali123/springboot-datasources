@@ -1,0 +1,90 @@
+2018-02-09 17:06:46.692  INFO 9468 --- [main] com.example.Application                  : Starting Application on pc0050 with PID 9468 (C:\Users\lide\eclipse-workspace\demo\target\classes started by lide in C:\Users\lide\eclipse-workspace\demo)
+2018-02-09 17:06:46.695  INFO 9468 --- [main] com.example.Application                  : No active profile set, falling back to default profiles: default
+2018-02-09 17:06:46.734  INFO 9468 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6adbc9d: startup date [Fri Feb 09 17:06:46 CST 2018]; root of context hierarchy
+2018-02-09 17:06:47.300  INFO 9468 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'testFilter' with a different definition: replacing [Generic bean: class [com.example.filter.TestFilter$$EnhancerBySpringCGLIB$$f696c2d0]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\lide\eclipse-workspace\demo\target\classes\com\example\filter\TestFilter.class]] with [Root bean: class [org.springframework.boot.web.servlet.FilterRegistrationBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2018-02-09 17:06:47.554  INFO 9468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-02-09 17:06:47.564  INFO 9468 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-02-09 17:06:47.565  INFO 9468 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-02-09 17:06:47.578  INFO 9468 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_91\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_91/bin/server;C:/Program Files/Java/jre1.8.0_91/bin;C:/Program Files/Java/jre1.8.0_91/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_91\bin;C:\Program Files\Java\jdk1.8.0_91\jre\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;D:\软件安全下载目录\;C:\Users\lide\AppData\Roaming\npm;D:\Egret Wing 3\bin;D:\桌面;;.]
+2018-02-09 17:06:47.648  INFO 9468 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-02-09 17:06:47.649  INFO 9468 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 915 ms
+2018-02-09 17:06:47.753  INFO 9468 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-09 17:06:47.754  INFO 9468 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-09 17:06:47.754  INFO 9468 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-09 17:06:47.754  INFO 9468 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-09 17:06:47.754  INFO 9468 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'testFilter' to urls: [/test]
+2018-02-09 17:06:47.754  INFO 9468 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-02-09 17:06:47.790  WARN 9468 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'testPojo': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'wdl.name' in value "${wdl.name}"
+2018-02-09 17:06:47.791  INFO 9468 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-02-09 17:06:47.801  INFO 9468 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-02-09 17:06:47.805 ERROR 9468 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'testPojo': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'wdl.name' in value "${wdl.name}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:379) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1344) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.0.BUILD-SNAPSHOT.jar:2.0.0.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) [spring-boot-2.0.0.BUILD-SNAPSHOT.jar:2.0.0.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:388) [spring-boot-2.0.0.BUILD-SNAPSHOT.jar:2.0.0.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327) [spring-boot-2.0.0.BUILD-SNAPSHOT.jar:2.0.0.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.0.BUILD-SNAPSHOT.jar:2.0.0.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1234) [spring-boot-2.0.0.BUILD-SNAPSHOT.jar:2.0.0.BUILD-SNAPSHOT]
+	at com.example.Application.main(Application.java:17) [classes/:na]
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'wdl.name' in value "${wdl.name}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:172) ~[spring-core-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124) ~[spring-core-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:237) ~[spring-core-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:211) ~[spring-core-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175) ~[spring-context-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:834) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1086) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373) ~[spring-beans-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	... 17 common frames omitted
+
+2018-02-09 17:07:08.057  INFO 8076 --- [main] com.example.Application                  : Starting Application on pc0050 with PID 8076 (C:\Users\lide\eclipse-workspace\demo\target\classes started by lide in C:\Users\lide\eclipse-workspace\demo)
+2018-02-09 17:07:08.064  INFO 8076 --- [main] com.example.Application                  : No active profile set, falling back to default profiles: default
+2018-02-09 17:07:08.177  INFO 8076 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6adbc9d: startup date [Fri Feb 09 17:07:08 CST 2018]; root of context hierarchy
+2018-02-09 17:07:08.701  INFO 8076 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'testFilter' with a different definition: replacing [Generic bean: class [com.example.filter.TestFilter$$EnhancerBySpringCGLIB$$1a782fb1]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\lide\eclipse-workspace\demo\target\classes\com\example\filter\TestFilter.class]] with [Root bean: class [org.springframework.boot.web.servlet.FilterRegistrationBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2018-02-09 17:07:08.984  INFO 8076 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-02-09 17:07:08.991  INFO 8076 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-02-09 17:07:08.992  INFO 8076 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.27
+2018-02-09 17:07:09.004  INFO 8076 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_91\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_91/bin/server;C:/Program Files/Java/jre1.8.0_91/bin;C:/Program Files/Java/jre1.8.0_91/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_91\bin;C:\Program Files\Java\jdk1.8.0_91\jre\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;D:\软件安全下载目录\;C:\Users\lide\AppData\Roaming\npm;D:\Egret Wing 3\bin;D:\桌面;;.]
+2018-02-09 17:07:09.056  INFO 8076 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-02-09 17:07:09.056  INFO 8076 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 879 ms
+2018-02-09 17:07:09.152  INFO 8076 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-09 17:07:09.152  INFO 8076 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-09 17:07:09.152  INFO 8076 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-09 17:07:09.152  INFO 8076 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-09 17:07:09.152  INFO 8076 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'testFilter' to urls: [/test]
+2018-02-09 17:07:09.152  INFO 8076 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-02-09 17:07:09.372  INFO 8076 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6adbc9d: startup date [Fri Feb 09 17:07:08 CST 2018]; root of context hierarchy
+2018-02-09 17:07:09.438  INFO 8076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test]}" onto public java.lang.String com.example.game.controller.YQSGameController.index()
+2018-02-09 17:07:09.439  INFO 8076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test1]}" onto public java.lang.String com.example.game.controller.YQSGameController.test()
+2018-02-09 17:07:09.442  INFO 8076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-02-09 17:07:09.443  INFO 8076 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-02-09 17:07:09.465  INFO 8076 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-09 17:07:09.466  INFO 8076 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-09 17:07:09.494  INFO 8076 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-09 17:07:09.626  INFO 8076 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-02-09 17:07:09.686  INFO 8076 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-02-09 17:07:09.689  INFO 8076 --- [main] com.example.Application                  : Started Application in 1.932 seconds (JVM running for 2.345)
+2018-02-09 17:07:14.837  INFO 8076 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-02-09 17:07:14.838  INFO 8076 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-02-09 17:07:14.858  INFO 8076 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2018-02-09 17:07:14.881 DEBUG 8076 --- [http-nio-8080-exec-2] c.e.game.controller.YQSGameController    : 测试信息：welcome log world
+2018-02-09 18:35:33.651  INFO 8076 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-02-09 18:35:33.651  INFO 8076 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6adbc9d: startup date [Fri Feb 09 17:07:08 CST 2018]; root of context hierarchy
+2018-02-09 18:35:33.653  INFO 8076 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
