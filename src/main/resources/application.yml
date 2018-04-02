@@ -1,18 +1,49 @@
 ##多数据源
-datasource:
-  #主库
-  master:
-    jdbcUrl: jdbc:mysql://localhost:3306/pa_yqs_game?useUnicode=true&characterEncoding=utf-8
-    username: root
-    password: root
-    driver-class-name: com.mysql.jdbc.Driver
-  #从库
-  slave:
-    #并非url而是jdbcUrl(因为这个在获取数据源时一直报错，看了DataSource的属性才知道是jdbcUrl)
-    jdbcUrl: jdbc:mysql://localhost:3306/data_count?useUnicode=true&characterEncoding=utf-8
-    username: root
-    password: root
-    driver-class-name: com.mysql.jdbc.Driver
+mysql:
+  datasource:
+    type:
+      com.mchange.v2.c3p0.ComboPooledDataSource
+    #主库
+    master:
+      jdbcUrl: jdbc:mysql://localhost:3306/test_m?useUnicode=true&characterEncoding=utf-8
+      user: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQueryTimeout: 900000
+      validationQuery: SELECT SYSDATE() from dual
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+    #从库
+    slave:
+      #并非url而是jdbcUrl(因为这个在获取数据源时一直报错，看了DataSource的属性才知道是jdbcUrl)
+      jdbcUrl: jdbc:mysql://localhost:3306/test_s?useUnicode=true&characterEncoding=utf-8
+      user: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQueryTimeout: 900000
+      validationQuery: SELECT SYSDATE() from dual
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
       
 ##mybatis
 mybatis:
@@ -20,6 +51,24 @@ mybatis:
   type-aliases-package: com.example.*.domain.pojo
   check-config-location: true
   config-location: classpath:mybatis-config.xml
+  
+##Redis缓存
+spring:
+  redis: 
+    database: 0
+    host: localhost
+    port: 6379
+    password: wantrain
+    timeout: 10000
+    jedis: 
+      pool: 
+        max-active: 30
+        max-total: 30
+        max-wait: -1
+        max-idle: 20
+        min-idle: 5 
+       
+
   
 
       

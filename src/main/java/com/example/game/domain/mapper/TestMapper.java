@@ -6,7 +6,7 @@ public interface TestMapper {
 
 	Integer queryCount();
 	
-	@Update("update admin set permission = permission - 1 where a_name = 'pa_admin2' and permission!=0")
+	@Update("update admin set permission = permission - 1 where id = '1' and permission!=0")
 	Integer updateAdminByName();
 
 }

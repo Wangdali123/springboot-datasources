@@ -39,7 +39,12 @@ public class YQSGameController{
 	
 	@RequestMapping("/test1")
 	public String test() {
-		return "从表："+testService.queryCountBySavle();
+		return "主表事务："+testService.queryCountBySavle();
+	}
+	
+	@RequestMapping("/test2")
+	public String test2() {
+		return "从表事务："+testService.queryRedisTest();
 	}
 	
 	

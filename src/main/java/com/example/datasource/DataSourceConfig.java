@@ -1,10 +1,12 @@
 package com.example.datasource;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
@@ -21,19 +23,20 @@ import org.springframework.context.annotation.Primary;
  */
 @Configuration
 public class DataSourceConfig {
+	
+	@Value("${mysql.datasource.type}")
+	private Class<? extends DataSource> dataSourcePoolType;
 
 	@Bean(name = "master")
-	@ConfigurationProperties(prefix = "datasource.master") 
+	@ConfigurationProperties(prefix = "mysql.datasource.master") 
 	public DataSource dataSource1() {
-		System.out.println("主配");
-		return DataSourceBuilder.create().build();
+		return DataSourceBuilder.create().type(dataSourcePoolType).build();
 	}
 
 	@Bean(name = "slave")
-	@ConfigurationProperties(prefix = "datasource.slave") 
+	@ConfigurationProperties(prefix = "mysql.datasource.slave") 
 	public DataSource dataSource2() {
-		System.out.println("从配");
-		return DataSourceBuilder.create().build();
+		return DataSourceBuilder.create().type(dataSourcePoolType).build();
 	}
 	
 	@Bean(name="dynamicDataSource")
