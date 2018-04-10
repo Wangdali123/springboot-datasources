@@ -2,8 +2,10 @@ package com.example.game.service;
 
 public interface TestService {
 
-	Integer queryCountByMester();
+	String queryCountByMester();
 	
 	Integer queryCountBySavle();
+	
+	String queryRedisTest();
 	
 }

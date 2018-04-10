@@ -11,6 +11,9 @@ import com.example.datasource.MyDataSource;
 import com.example.game.domain.mapper.TestMapper;
 import com.example.game.service.TestService;
 
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+
 
 /**
  * 
@@ -27,15 +30,19 @@ public class TestServiceImpl implements TestService {
 	@Autowired
 	private TestMapper testMapper;
 	
-	@Override
-	@MyDataSource(DataSourceType.Master)
-	public Integer queryCountByMester() {
-		return testMapper.queryCount();
-	}
-
+	@Autowired
+	private JedisPool jedisPool;
 	
 	@Override
-	@MyDataSource(DataSourceType.Slave)
+	@MyDataSource(DataSourceType.Master)
+	public String queryCountByMester() {
+		Jedis jedis = jedisPool.getResource();
+		logger.info("value值：{}",jedis.get("wdl"));
+		return jedis.get("wdl");
+	}
+	
+	@Override
+	@MyDataSource(DataSourceType.Master)
 	@Transactional
 	public Integer queryCountBySavle() {
 		//测试事务
@@ -45,6 +52,19 @@ public class TestServiceImpl implements TestService {
 			throw new RuntimeException();
 		}
 		return rows;
+	}
+
+	@Override
+	@MyDataSource(DataSourceType.Slave)
+	@Transactional
+	public String queryRedisTest() {
+		//测试事务
+		testMapper.updateAdminByName();
+		Integer rows = testMapper.updateAdminByName();
+		if(rows<=0) {	//更新小于1 执行回滚
+			throw new RuntimeException();
+		}
+		return rows+"";
 	}
 
 }
